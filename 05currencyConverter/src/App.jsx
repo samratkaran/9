@@ -11,7 +11,8 @@ function App() {
   const [to, setTo] = useState('inr')
   const [convertedAmount , setConvertedAmount] = useState(0)
 
-  const currencyInfo = useCurrencyInfo(to)
+  const currencyInfo = useCurrencyInfo(from)
+  // console.log(currencyInfo ," currency info")
 
   const options = Object.keys(currencyInfo)
   console.log("this is options", options)
@@ -24,7 +25,11 @@ function App() {
   }
   
   const convert = ()=>{
-    setConvertedAmount(amount * currencyInfo[to])
+    console.log('converting amout')
+    const data =  setConvertedAmount(amount * currencyInfo[to])
+    console.log(data)
+    return data
+    
   }
  
 return (
@@ -50,6 +55,7 @@ return (
                                 currencyOptions={options}
                                 onCurrencyChange={(val)=> setAmount(val)}
                                 selectCurrency={from}
+                                onAmountChange={(amount)=>{setAmount(amount)}}
                               
                                 
                             />
@@ -68,11 +74,12 @@ return (
                         <div className="w-full mt-1 mb-4">
                             <InputBox
                                 label="To"
-                                label="To"
+                                
                                 amount={convertedAmount}
                                 currencyOptions={options}
                                 onCurrencyChange={(val)=> setTo(val)}
-                                selectCurrency={to}
+                                selectCurrency={from}
+                              
                                 
                             />
                         </div>
