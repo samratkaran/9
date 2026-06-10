@@ -27,7 +27,6 @@ function App() {
   const convert = ()=>{
     console.log('converting amout')
     const data =  setConvertedAmount(amount * currencyInfo[to])
-    console.log(data)
     return data
     
   }
@@ -78,7 +77,7 @@ return (
                                 amount={convertedAmount}
                                 currencyOptions={options}
                                 onCurrencyChange={(val)=> setTo(val)}
-                                selectCurrency={from}
+                                selectCurrency={to}
                               
                                 
                             />
