@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
  const [color, setColor] = useState('olive')
-let arr = [ 'white', "green" , "orange", "yellow", "blue", "pink", "black"]
+const arr = [ 'white', "green" , "orange", "yellow", "blue", "pink", "black"]
 
 
 
