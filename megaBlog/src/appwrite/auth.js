@@ -47,10 +47,10 @@ export class AuthService{
             return await this.account.get()
         } catch (error) {
             console.log("error in getCurrentUser::error" , error)
-            throw error
+           
         }
         
-       
+       return null
     }
 
     async logout(){
@@ -59,7 +59,7 @@ export class AuthService{
             
         } catch (error) {
             console.log("error in logout::error" , error)
-            throw error
+            
         }
     }
 
