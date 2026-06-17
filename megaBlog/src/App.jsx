@@ -1,7 +1,19 @@
+import { useState } from "react"
+import {useDispatch} from 'react-redux'
+import authService from "./appwrite/auth"
+import { useEffect } from "react"
+
 
 
 function App() {
-  console.log(import.meta.env.VITE_APPWRITE_API_ENDPOINT)
+  const [loading, setLoading] = useState(true)
+  const dispatch =  useDispatch()
+  
+  useEffect(()=>{
+    authService.getCurrentUser()
+    .then()
+    .catch((err)=>console.log(err ,'error in authService'))
+  }, [])
 
   return (
   <>
