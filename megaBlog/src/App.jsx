@@ -4,6 +4,7 @@ import authService from "./appwrite/auth"
 import { useEffect } from "react"
 import { login, logout } from "./store/authSlice"
 import { Footer, Header } from "./components"
+import { BrowserRouter } from "react-router-dom"
 
 
 
@@ -32,12 +33,14 @@ function App() {
   }else{
     return <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
     <div className="w-full block">
-      <Header/>
+     <BrowserRouter>
+       <Header/>
       <main>
         {/* <Outlet/> */}
         
       </main>
       <Footer/>
+     </BrowserRouter>
     </div>
       
     </div>
