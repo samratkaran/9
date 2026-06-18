@@ -1,6 +1,6 @@
 import { useId } from "react";
 
-function input({ lable, type = "text", className = "", ref, ...props }) {
+function Input({ lable, type = "text", className = "", ref, ...props }) {
   const id = useId;
   return(
    <div className="w-full">
@@ -21,4 +21,4 @@ function input({ lable, type = "text", className = "", ref, ...props }) {
    </div>)
 }
 
-export default input;
+export default Input;
