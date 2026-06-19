@@ -17,18 +17,18 @@ const Login = () => {
     const formSubmit = async(data)=>{
         setError("")
         try {
-          const session =  await authService.login(data)
-          if(session){
-           const userData = await authService.getCurrentUser()
+        const session =  await authService.login(data)
+        if(session){
+        const userData = await authService.getCurrentUser()
             if(userData) dispatch(storeLogin(userData))
                 navigat('/')
-          }
+        }
         } catch (error) {
             setError(error.message)
         }
     }
-  return (
-     <div
+return (
+<div
     className='flex items-center justify-center w-full'
     >
         <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
@@ -63,23 +63,24 @@ const Login = () => {
                 type="password"
                 {...register("password" , {
                     required:true,
-                    validate:{
-                        matchPatern:(value) =>/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm. test(value) || "password Must be Valid"
+                    pattern:{
+                        value:/regex/,
+                        message:'please enter valid password'
                     }
                 })}
             />
             <Button
-                 type="submit"
+            type="submit"
                 className="w-full"
             >
                 Sign In
             </Button>
-              
+            
             </div>
         </form>
         </div>
     </div>
-  )
+)
 }
 
 export default Login
