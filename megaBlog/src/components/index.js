@@ -10,6 +10,7 @@ import Input from "./input";
 import RTE from "./RTE";
 import Protected from "./Protected";
 import Signup from "./Signup";
+import Postform from "./Post-form/Postform";
 
 
-export {Header ,Footer , Container, LogoutBtn, Logo ,Postcard ,Select ,Button ,Input ,RTE ,Protected,Signup }
+export {Header ,Footer , Container, LogoutBtn, Logo ,Postcard ,Select ,Button ,Input ,RTE ,Protected,Signup ,Postform }
