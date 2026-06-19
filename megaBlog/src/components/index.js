@@ -7,4 +7,9 @@ import Postcard from "./Postcard";
 import Select from "./Select";
 import Button from "./Button";
 import Input from "./input";
-export {Header ,Footer , Container, LogoutBtn, Logo ,Postcard ,Select ,Button ,Input}
+import RTE from "./RTE";
+import Protected from "./Protected";
+import Signup from "./Signup";
+
+
+export {Header ,Footer , Container, LogoutBtn, Logo ,Postcard ,Select ,Button ,Input ,RTE ,Protected,Signup }
