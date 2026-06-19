@@ -6,7 +6,7 @@ export default function Protected({children , authentication = true}) {
     const navigate = useNavigate()
     const [loader ,setLoader] = useState(true)
     const authStatus = useSelector(state => state.status)
-
+ // need to check if user is authenticated or not and then redirect to login page if not authenticated and also want to recheck and how is this file work
     useEffect(()=>{
         if(authentication && authStatus !== authentication){
         navigate('/login')
