@@ -16,14 +16,14 @@ export class AuthService{
 
     async createAccount({email ,password ,name}){
         try {
-          const userAccount =  await this.account.create(ID.unique() , email , password ,name)
+        const userAccount =  await this.account.create(ID.unique() , email , password ,name)
         
-          if(userAccount){
+        if(userAccount){
                 this.login({email , password})
-          }else{
+        }else{
             return userAccount
-          }
-          
+        }
+        
         } catch (error) {
             console.log("error in create account" , error)
             throw new error
@@ -42,17 +42,6 @@ export class AuthService{
 
     }
 
-    async getCurrentUser(){
-        try {
-            return await this.account.get()
-        } catch (error) {
-            console.log("error in getCurrentUser::error" , error)
-           
-        }
-        
-       return null
-    }
-
     async logout(){
         try {
            return await this.account.deleteSessions()
@@ -63,7 +52,16 @@ export class AuthService{
         }
     }
 
-    
+    async getCurrentUser(){
+        try {
+            return await this.account.get()
+        } catch (error) {
+            console.log("error in getCurrentUser::error" , error)
+           
+        }
+        
+       return null
+    }
 }
 
 
