@@ -11,6 +11,7 @@ import RTE from "./RTE";
 import Protected from "./Protected";
 import Signup from "./Signup";
 import Postform from "./Post-form/Postform";
+import Login from './Login'
 
 
-export {Header ,Footer , Container, LogoutBtn, Logo ,Postcard ,Select ,Button ,Input ,RTE ,Protected,Signup ,Postform }
+export {Header ,Footer , Container, LogoutBtn, Logo ,Postcard ,Select ,Button ,Input ,RTE ,Protected,Signup ,Postform,Login }
