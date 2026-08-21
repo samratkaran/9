@@ -1,5 +1,5 @@
 import { Postcard } from "../components"
-import Container from "../components"
+import {Container} from "../components/index.js"
 import service from "../appwrite/conf"
 import { useEffect, useState } from "react"
 

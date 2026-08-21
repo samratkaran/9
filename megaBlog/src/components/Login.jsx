@@ -18,10 +18,12 @@ const Login = () => {
         setError("")
         try {
         const session =  await authService.login(data)
+
         if(session){
         const userData = await authService.getCurrentUser()
             if(userData) dispatch(storeLogin(userData))
                 navigat('/')
+            console.log('userData',userData)
         }
         } catch (error) {
             setError(error.message)
@@ -43,7 +45,16 @@ return (
                     
         </p>
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-        <form onSubmit={handleSubmit(formSubmit)} className='mt-8'>
+        <form onSubmit={handleSubmit(
+        (data) => {
+            console.log("FORM SUBMITTED", data);
+            formSubmit(data);
+        },
+        (errors) => {
+            console.log("FORM ERRORS", errors);
+        }
+    )}
+    className="mt-8">
             <div className="sapce-y-5">
             <Input
                 lable='Email:'
@@ -57,18 +68,14 @@ return (
                     }
                 })}
             />
-            <Input
-                lable='password'
-                placeholder ='Enter your password'
-                type="password"
-                {...register("password" , {
-                    required:true,
-                    pattern:{
-                        value:/regex/,
-                        message:'please enter valid password'
-                    }
-                })}
-            />
+          <Input
+    label="Password:"
+    placeholder="Enter your password"
+    type="password"
+    {...register("password", {
+        required: "Password is required"
+    })}
+/>
             <Button
             type="submit"
                 className="w-full"

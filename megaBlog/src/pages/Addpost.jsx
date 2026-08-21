@@ -1,5 +1,5 @@
 import { Postform as PostFormComponent } from "../components"
-import Container from "../components"
+import {Container} from "../components/index.js"
 
 
 function Addpost() {
