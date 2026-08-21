@@ -8,7 +8,7 @@ import Select from "./Select";
 import Button from "./Button";
 import Input from "./input";
 import RTE from "./RTE";
-import Protected from "./Protected";
+import Protected from "./ProtectedLayout";
 import Signup from "./Signup";
 import Postform from "./Post-form/Postform";
 import Login from './Login'
